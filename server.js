@@ -38,8 +38,14 @@ app.get("/api/characters", (req, res) => {
     res.json(characters);
 });
 
-
 // /api/characters/:routeName
+app.get("/api/characters/:routeName", (req, res) => {
+    const targetCharacter = req.params.routeName;
+    const character = characters.find(character => {
+        return character.routeName === targetCharacter;
+    });
+    res.json(character);
+});
 
 app.listen(PORT, () => {
     console.log(`Server listening on http://localhost:${PORT}`);
