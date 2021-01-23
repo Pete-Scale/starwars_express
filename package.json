@@ -1,12 +1,12 @@
 {
-  "name": "starwars",
+  "name": "starwars-express",
   "version": "1.0.0",
-  "description": "",
+  "description": "a starwars app",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Pete-Scale",
+  "author": "Scalewag",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
