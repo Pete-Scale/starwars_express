@@ -28,7 +28,7 @@ const characters = [
         forcePoints: 100,
         age: 22,
         avatar: "https://upload.wikimedia.org/wikipedia/en/1/1b/Princess_Leia%27s_characteristic_hairstyle.jpg",
-        routeName: "yoda"
+        routeName: "princessleia"
     }
 ];
 
@@ -55,8 +55,12 @@ app.get("/api/characters/:routeName", (req, res) => {
 });
 
 app.post("/api/characters/add", (req, res) => {
-    console.log(req.body);
-    res.end();
+    // console.log(req.body);
+    const newCharacter = req.body
+    newCharacter.routeName = newCharacter.name.replace(/ /g, "").toLowerCase();
+    characters.push(newCharacter);
+    console.log(characters)
+    res.status(200).send();
 });
 
 app.listen(PORT, () => {
